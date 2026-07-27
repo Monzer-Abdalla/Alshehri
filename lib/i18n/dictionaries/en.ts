@@ -47,6 +47,20 @@ const en: Dictionary = {
     currency: 'SAR',
   },
 
+  catalog: {
+    title: 'Product Catalog',
+    description: 'Discover our complete range of electrical appliances and lighting solutions',
+    searchPlaceholder: 'Search products...',
+    allCategories: 'All Categories',
+    noResults: 'No products found.',
+  },
+
+  detail: {
+    specifications: 'Technical Specifications',
+    description: 'Product Description',
+    orderCTA: 'Order This Product Now',
+  },
+
   footer: {
     companyName: 'Alshehri Company Ltd.',
     companyDesc:

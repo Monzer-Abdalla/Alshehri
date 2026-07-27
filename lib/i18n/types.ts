@@ -65,11 +65,27 @@ export interface FooterDict {
   terms: string
 }
 
+export interface CatalogDict {
+  title: string
+  description: string
+  searchPlaceholder: string
+  allCategories: string
+  noResults: string
+}
+
+export interface DetailDict {
+  specifications: string
+  description: string
+  orderCTA: string
+}
+
 export interface Dictionary {
   locale: string
   dir: 'rtl' | 'ltr'
   nav: NavDict
   hero: HeroDict
   products: ProductsDict
+  catalog: CatalogDict
+  detail: DetailDict
   footer: FooterDict
 }

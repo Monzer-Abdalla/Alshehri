@@ -47,6 +47,20 @@ const ar: Dictionary = {
     currency: 'ر.س',
   },
 
+  catalog: {
+    title: 'كتالوج المنتجات',
+    description: 'اكتشف مجموعتنا الكاملة من الأجهزة الكهربائية وحلول الإضاءة',
+    searchPlaceholder: 'ابحث عن منتج...',
+    allCategories: 'جميع الفئات',
+    noResults: 'لم يتم العثور على منتجات.',
+  },
+
+  detail: {
+    specifications: 'المواصفات التقنية',
+    description: 'وصف المنتج',
+    orderCTA: 'اطلب هذا المنتج الآن',
+  },
+
   footer: {
     companyName: 'شركة الشهري المحدودة',
     companyDesc:
