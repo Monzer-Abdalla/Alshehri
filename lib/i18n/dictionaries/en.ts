@@ -98,6 +98,15 @@ const en: Dictionary = {
     },
   },
 
+  about: {
+    title: 'About Us',
+    description: 'Learn about Alshehri Company Ltd. and our future vision in the world of home appliances and lighting.',
+    storyTitle: 'Our Story',
+    storyText: 'Alshehri Company Ltd. was founded with a clear vision to provide the latest home appliances and modern lighting solutions to the Saudi market. Over years of experience, we have built a solid reputation based on trust, quality, and exceptional customer service.',
+    visionTitle: 'Our Vision',
+    visionText: 'We strive to be the first choice and leading destination for every home in Saudi Arabia by offering innovative products that combine high efficiency with elegant designs to meet the needs of modern living.',
+  },
+
   footer: {
     companyName: 'Alshehri Company Ltd.',
     companyDesc:

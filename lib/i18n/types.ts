@@ -102,6 +102,15 @@ export interface ContactDict {
   }
 }
 
+export interface AboutDict {
+  title: string
+  description: string
+  storyTitle: string
+  storyText: string
+  visionTitle: string
+  visionText: string
+}
+
 export interface CatalogDict {
   title: string
   description: string
@@ -124,6 +133,7 @@ export interface Dictionary {
   products: ProductsDict
   catalog: CatalogDict
   detail: DetailDict
+  about: AboutDict
   contact: ContactDict
   footer: FooterDict
 }
