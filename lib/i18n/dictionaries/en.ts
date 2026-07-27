@@ -107,6 +107,21 @@ const en: Dictionary = {
     visionText: 'We strive to be the first choice and leading destination for every home in Saudi Arabia by offering innovative products that combine high efficiency with elegant designs to meet the needs of modern living.',
   },
 
+  cart: {
+    title: 'Shopping Cart',
+    emptyMessage: 'Your cart is currently empty',
+    total: 'Total',
+    checkoutBtn: 'Proceed to Checkout',
+  },
+
+  checkout: {
+    successTitle: 'Order Received Successfully!',
+    successMessage: 'Thank you for shopping with us. We will process your order shortly.',
+    cancelTitle: 'Payment Cancelled',
+    cancelMessage: 'No charges were made. You can return and complete your order at any time.',
+    backBtn: 'Return to Store',
+  },
+
   footer: {
     companyName: 'Alshehri Company Ltd.',
     companyDesc:

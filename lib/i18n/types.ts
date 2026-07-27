@@ -111,6 +111,21 @@ export interface AboutDict {
   visionText: string
 }
 
+export interface CartDict {
+  title: string
+  emptyMessage: string
+  total: string
+  checkoutBtn: string
+}
+
+export interface CheckoutDict {
+  successTitle: string
+  successMessage: string
+  cancelTitle: string
+  cancelMessage: string
+  backBtn: string
+}
+
 export interface CatalogDict {
   title: string
   description: string
@@ -134,6 +149,8 @@ export interface Dictionary {
   catalog: CatalogDict
   detail: DetailDict
   about: AboutDict
+  cart: CartDict
+  checkout: CheckoutDict
   contact: ContactDict
   footer: FooterDict
 }
