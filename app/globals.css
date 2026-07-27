@@ -1,29 +1,155 @@
 @import "tailwindcss";
 
+/* ============================================================
+   DESIGN TOKENS — Alshehri Company Ltd.
+   Premium e-commerce color system with light + dark modes
+   ============================================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --font-geist-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-geist-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  /* Brand */
+  --brand-primary:    220 38 38;   /* red-600 */
+  --brand-primary-hover: 185 28 28; /* red-700 */
+  --brand-primary-light: 254 226 226; /* red-100 */
+  --brand-accent:     239 68 68;   /* red-500 — lighter accent */
+
+  /* ── LIGHT MODE ── */
+  --background:       250 250 250; /* zinc-50 */
+  --surface:          255 255 255; /* white */
+  --surface-elevated: 255 255 255;
+  --surface-muted:    244 244 245; /* zinc-100 */
+  --border:           228 228 231; /* zinc-200 */
+  --border-subtle:    244 244 245; /* zinc-100 */
+
+  --text-primary:     24 24 27;    /* zinc-900 */
+  --text-secondary:   63 63 70;    /* zinc-700 */
+  --text-muted:       113 113 122; /* zinc-500 */
+  --text-inverse:     255 255 255;
+
+  /* Navbar glass */
+  --nav-bg:           255 255 255 / 0.75;
+  --nav-border:       228 228 231 / 0.6;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.06), 0 1px 2px -1px rgb(0 0 0 / 0.06);
+  --shadow-md: 0 4px 16px -2px rgb(0 0 0 / 0.08), 0 2px 8px -2px rgb(0 0 0 / 0.05);
+  --shadow-card: 0 2px 12px -2px rgb(0 0 0 / 0.07), 0 1px 4px -1px rgb(0 0 0 / 0.05);
+  --shadow-card-hover: 0 8px 32px -4px rgb(0 0 0 / 0.12), 0 4px 12px -2px rgb(0 0 0 / 0.08);
+  --shadow-brand: 0 8px 24px -4px rgb(220 38 38 / 0.35);
+
+  /* Fonts */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans Arabic", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ── DARK MODE ── */
+.dark {
+  --background:       9 9 11;      /* zinc-950 */
+  --surface:          24 24 27;    /* zinc-900 */
+  --surface-elevated: 39 39 42;    /* zinc-800 */
+  --surface-muted:    39 39 42;    /* zinc-800 */
+  --border:           63 63 70;    /* zinc-700 */
+  --border-subtle:    39 39 42;    /* zinc-800 */
+
+  --text-primary:     250 250 250; /* zinc-50 */
+  --text-secondary:   212 212 216; /* zinc-300 */
+  --text-muted:       113 113 122; /* zinc-500 */
+  --text-inverse:     24 24 27;
+
+  --nav-bg:           9 9 11 / 0.80;
+  --nav-border:       63 63 70 / 0.5;
+
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 16px -2px rgb(0 0 0 / 0.4);
+  --shadow-card: 0 2px 12px -2px rgb(0 0 0 / 0.3);
+  --shadow-card-hover: 0 8px 32px -4px rgb(0 0 0 / 0.5);
+  --shadow-brand: 0 8px 24px -4px rgb(220 38 38 / 0.45);
+
+  --brand-primary-light: 69 10 10; /* red-950 */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-geist-sans);
+  background-color: rgb(var(--background));
+  color: rgb(var(--text-primary));
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.2s ease;
 }
 
+/* ============================================================
+   THEME UTILITY CLASSES
+   ============================================================ */
+
+.bg-surface        { background-color: rgb(var(--surface)); }
+.bg-surface-elevated { background-color: rgb(var(--surface-elevated)); }
+.bg-surface-muted  { background-color: rgb(var(--surface-muted)); }
+.bg-app            { background-color: rgb(var(--background)); }
+
+.text-primary      { color: rgb(var(--text-primary)); }
+.text-secondary    { color: rgb(var(--text-secondary)); }
+.text-muted        { color: rgb(var(--text-muted)); }
+
+.border-token      { border-color: rgb(var(--border)); }
+.border-subtle     { border-color: rgb(var(--border-subtle)); }
+
+.shadow-card       { box-shadow: var(--shadow-card); }
+.shadow-card-hover { box-shadow: var(--shadow-card-hover); }
+.shadow-brand      { box-shadow: var(--shadow-brand); }
+
+/* ============================================================
+   TAILWIND THEME OVERRIDES
+   ============================================================ */
+
+@theme inline {
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+/* ============================================================
+   SCROLLBAR STYLING
+   ============================================================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--border));
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--text-muted));
+}
+
+/* ============================================================
+   FOCUS STYLES
+   ============================================================ */
+
+:focus-visible {
+  outline: 2px solid rgb(var(--brand-primary));
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   SELECTION COLOR
+   ============================================================ */
+
+::selection {
+  background-color: rgb(var(--brand-primary) / 0.2);
+  color: rgb(var(--text-primary));
+}
