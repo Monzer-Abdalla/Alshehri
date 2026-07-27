@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *));
+
 /* ============================================================
    DESIGN TOKENS — Alshehri Company Ltd.
    Premium e-commerce color system with light + dark modes
