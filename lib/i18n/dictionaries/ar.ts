@@ -61,6 +61,43 @@ const ar: Dictionary = {
     orderCTA: 'اطلب هذا المنتج الآن',
   },
 
+  contact: {
+    title: 'اتصل بنا',
+    description: 'نسعد بتواصلك معنا. أرسل لنا رسالة وسنرد عليك في أقرب وقت ممكن.',
+    form: {
+      nameLabel: 'الاسم الكامل',
+      namePlaceholder: 'أحمد محمد',
+      emailLabel: 'البريد الإلكتروني',
+      emailPlaceholder: 'ahmed@example.com',
+      subjectLabel: 'الموضوع',
+      subjectPlaceholder: 'كيف يمكننا مساعدتك؟',
+      messageLabel: 'الرسالة',
+      messagePlaceholder: 'اكتب رسالتك هنا...',
+      submitBtn: 'إرسال الرسالة',
+      submittingBtn: 'جاري الإرسال...',
+      successTitle: 'تم الإرسال بنجاح!',
+      successDesc: 'شكراً لتواصلك معنا. سنقوم بالرد عليك قريباً.',
+      errorMsg: 'حدث خطأ ما. يرجى المحاولة مرة أخرى لاحقاً.',
+      validation: {
+        nameRequired: 'الاسم مطلوب',
+        emailRequired: 'البريد الإلكتروني مطلوب',
+        emailInvalid: 'بريد إلكتروني غير صالح',
+        subjectRequired: 'الموضوع مطلوب',
+        messageRequired: 'الرسالة مطلوبة',
+        messageMin: 'يجب أن تتكون الرسالة من 10 أحرف على الأقل',
+      },
+    },
+    info: {
+      title: 'معلومات التواصل',
+      addressTitle: 'مكتبنا',
+      address: 'طريق الملك فهد، الرياض، المملكة العربية السعودية',
+      emailTitle: 'راسلنا',
+      phoneTitle: 'اتصل بنا',
+      workingHoursTitle: 'ساعات العمل',
+      workingHours: 'الأحد - الخميس: 9:00 صباحاً - 6:00 مساءً',
+    },
+  },
+
   footer: {
     companyName: 'شركة الشهري المحدودة',
     companyDesc:

@@ -61,6 +61,43 @@ const en: Dictionary = {
     orderCTA: 'Order This Product Now',
   },
 
+  contact: {
+    title: 'Contact Us',
+    description: 'We\'d love to hear from you. Send us a message and we\'ll respond as soon as possible.',
+    form: {
+      nameLabel: 'Full Name',
+      namePlaceholder: 'John Doe',
+      emailLabel: 'Email Address',
+      emailPlaceholder: 'john@example.com',
+      subjectLabel: 'Subject',
+      subjectPlaceholder: 'How can we help?',
+      messageLabel: 'Message',
+      messagePlaceholder: 'Write your message here...',
+      submitBtn: 'Send Message',
+      submittingBtn: 'Sending...',
+      successTitle: 'Message Sent!',
+      successDesc: 'Thank you for contacting us. We will get back to you shortly.',
+      errorMsg: 'Something went wrong. Please try again later.',
+      validation: {
+        nameRequired: 'Name is required',
+        emailRequired: 'Email is required',
+        emailInvalid: 'Invalid email address',
+        subjectRequired: 'Subject is required',
+        messageRequired: 'Message is required',
+        messageMin: 'Message must be at least 10 characters',
+      },
+    },
+    info: {
+      title: 'Contact Information',
+      addressTitle: 'Our Office',
+      address: 'King Fahd Road, Riyadh, Saudi Arabia',
+      emailTitle: 'Email Us',
+      phoneTitle: 'Call Us',
+      workingHoursTitle: 'Working Hours',
+      workingHours: 'Sun - Thu: 9:00 AM - 6:00 PM',
+    },
+  },
+
   footer: {
     companyName: 'Alshehri Company Ltd.',
     companyDesc:

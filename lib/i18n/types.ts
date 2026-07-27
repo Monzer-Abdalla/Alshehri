@@ -65,6 +65,43 @@ export interface FooterDict {
   terms: string
 }
 
+export interface ContactDict {
+  title: string
+  description: string
+  form: {
+    nameLabel: string
+    namePlaceholder: string
+    emailLabel: string
+    emailPlaceholder: string
+    subjectLabel: string
+    subjectPlaceholder: string
+    messageLabel: string
+    messagePlaceholder: string
+    submitBtn: string
+    submittingBtn: string
+    successTitle: string
+    successDesc: string
+    errorMsg: string
+    validation: {
+      nameRequired: string
+      emailRequired: string
+      emailInvalid: string
+      subjectRequired: string
+      messageRequired: string
+      messageMin: string
+    }
+  }
+  info: {
+    title: string
+    addressTitle: string
+    address: string
+    emailTitle: string
+    phoneTitle: string
+    workingHoursTitle: string
+    workingHours: string
+  }
+}
+
 export interface CatalogDict {
   title: string
   description: string
@@ -87,5 +124,6 @@ export interface Dictionary {
   products: ProductsDict
   catalog: CatalogDict
   detail: DetailDict
+  contact: ContactDict
   footer: FooterDict
 }
