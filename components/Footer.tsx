@@ -41,9 +41,12 @@ export default function Footer({ dict, lang }: FooterProps) {
   ];
 
   return (
-    <footer className="bg-zinc-950 text-zinc-400 pt-16 pb-6 border-t border-zinc-800/60">
+    <footer className="pt-16 pb-6 border-t
+                       bg-zinc-100 dark:bg-zinc-950
+                       border-zinc-200 dark:border-zinc-800/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Image
@@ -51,18 +54,24 @@ export default function Footer({ dict, lang }: FooterProps) {
               alt={dict.footer.companyName}
               width={160}
               height={48}
-              className="h-14 w-auto object-contain mb-4 brightness-0 invert"
+              className="h-14 w-auto object-contain mb-4 dark:brightness-0 dark:invert"
             />
-            <p className="text-sm leading-relaxed text-zinc-500 mb-6">{dict.footer.companyDesc}</p>
+            <p className="text-sm leading-relaxed mb-6
+                          text-zinc-600 dark:text-zinc-500">
+              {dict.footer.companyDesc}
+            </p>
             <div className="flex gap-3">
               {socialLinks.map((s) => (
                 <a
                   key={s.label}
                   href={s.href}
                   aria-label={s.label}
-                  className="w-9 h-9 flex items-center justify-center rounded-xl bg-zinc-900 border border-zinc-800
-                             text-zinc-500 hover:text-white hover:bg-red-600 hover:border-red-600
-                             transition-all duration-200"
+                  className="w-9 h-9 flex items-center justify-center rounded-xl border
+                             transition-all duration-200
+                             bg-white dark:bg-zinc-900
+                             border-zinc-300 dark:border-zinc-800
+                             text-zinc-500 dark:text-zinc-500
+                             hover:text-white hover:bg-red-600 hover:border-red-600"
                 >
                   {s.icon}
                 </a>
@@ -72,7 +81,10 @@ export default function Footer({ dict, lang }: FooterProps) {
 
           {/* Products Column */}
           <div>
-            <h4 className="text-zinc-100 font-semibold text-sm mb-5">{dict.footer.productsCol}</h4>
+            <h4 className="font-semibold text-sm mb-5
+                           text-zinc-800 dark:text-zinc-100">
+              {dict.footer.productsCol}
+            </h4>
             <ul className="space-y-3">
               {[
                 dict.footer.links.appliancesLink,
@@ -83,9 +95,10 @@ export default function Footer({ dict, lang }: FooterProps) {
                 <li key={item}>
                   <Link
                     href={`/${lang}/products`}
-                    className="text-sm text-zinc-500 hover:text-red-400 transition-colors duration-200 flex items-center gap-2"
+                    className="text-sm transition-colors duration-200
+                               text-zinc-500 dark:text-zinc-500
+                               hover:text-red-600 dark:hover:text-red-400"
                   >
-                    <span className="w-1 h-1 rounded-full bg-zinc-700 group-hover:bg-red-600 inline-block" />
                     {item}
                   </Link>
                 </li>
@@ -95,7 +108,10 @@ export default function Footer({ dict, lang }: FooterProps) {
 
           {/* Services Column */}
           <div>
-            <h4 className="text-zinc-100 font-semibold text-sm mb-5">{dict.footer.servicesCol}</h4>
+            <h4 className="font-semibold text-sm mb-5
+                           text-zinc-800 dark:text-zinc-100">
+              {dict.footer.servicesCol}
+            </h4>
             <ul className="space-y-3">
               {[
                 dict.footer.links.warranty,
@@ -106,7 +122,9 @@ export default function Footer({ dict, lang }: FooterProps) {
                 <li key={item}>
                   <Link
                     href={`/${lang}/contact`}
-                    className="text-sm text-zinc-500 hover:text-red-400 transition-colors duration-200"
+                    className="text-sm transition-colors duration-200
+                               text-zinc-500 dark:text-zinc-500
+                               hover:text-red-600 dark:hover:text-red-400"
                   >
                     {item}
                   </Link>
@@ -117,7 +135,10 @@ export default function Footer({ dict, lang }: FooterProps) {
 
           {/* Contact Column */}
           <div>
-            <h4 className="text-zinc-100 font-semibold text-sm mb-5">{dict.footer.contactCol}</h4>
+            <h4 className="font-semibold text-sm mb-5
+                           text-zinc-800 dark:text-zinc-100">
+              {dict.footer.contactCol}
+            </h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <svg className="w-4 h-4 text-red-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -130,7 +151,8 @@ export default function Footer({ dict, lang }: FooterProps) {
                 <svg className="w-4 h-4 text-red-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <a href={`tel:${dict.footer.phone}`} className="text-sm text-zinc-500 hover:text-white transition-colors">
+                <a href={`tel:${dict.footer.phone}`}
+                   className="text-sm text-zinc-500 hover:text-zinc-800 dark:hover:text-white transition-colors">
                   {dict.footer.phone}
                 </a>
               </li>
@@ -138,7 +160,8 @@ export default function Footer({ dict, lang }: FooterProps) {
                 <svg className="w-4 h-4 text-red-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <a href={`mailto:${dict.footer.email}`} className="text-sm text-zinc-500 hover:text-white transition-colors">
+                <a href={`mailto:${dict.footer.email}`}
+                   className="text-sm text-zinc-500 hover:text-zinc-800 dark:hover:text-white transition-colors">
                   {dict.footer.email}
                 </a>
               </li>
@@ -147,11 +170,19 @@ export default function Footer({ dict, lang }: FooterProps) {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-zinc-800/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-600">
+        <div className="pt-8 border-t flex flex-col sm:flex-row items-center justify-between gap-4 text-xs
+                        border-zinc-200 dark:border-zinc-800/60
+                        text-zinc-400 dark:text-zinc-600">
           <p>© {currentYear} {dict.footer.copyright}</p>
           <div className="flex items-center gap-6">
-            <Link href={`/${lang}`} className="hover:text-zinc-400 transition-colors">{dict.footer.privacy}</Link>
-            <Link href={`/${lang}`} className="hover:text-zinc-400 transition-colors">{dict.footer.terms}</Link>
+            <Link href={`/${lang}`}
+                  className="hover:text-zinc-700 dark:hover:text-zinc-400 transition-colors">
+              {dict.footer.privacy}
+            </Link>
+            <Link href={`/${lang}`}
+                  className="hover:text-zinc-700 dark:hover:text-zinc-400 transition-colors">
+              {dict.footer.terms}
+            </Link>
           </div>
         </div>
       </div>

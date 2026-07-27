@@ -47,23 +47,25 @@ export default function Hero({ dict, lang }: HeroProps) {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-zinc-950 py-24 sm:py-32 flex items-center justify-center min-h-[88vh]">
-      {/* Background ambient glows */}
+    <section className="relative overflow-hidden min-h-[88vh] flex items-center justify-center
+                        bg-zinc-50 dark:bg-zinc-950 py-24 sm:py-32">
+      {/* Background ambient blobs — different tones per theme */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-1/4 -end-20 w-96 h-96 bg-red-600/12 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/4 -start-20 w-96 h-96 bg-red-900/10 rounded-full blur-[120px]" />
-        <div className="absolute inset-0 bg-[radial-gradient(#ffffff08_1px,transparent_1px)] [background-size:20px_20px]" />
+        {/* Light mode blobs */}
+        <div className="absolute top-1/4 -end-20 w-96 h-96 bg-red-100 rounded-full blur-[120px] opacity-70 dark:opacity-0 transition-opacity duration-500" />
+        <div className="absolute bottom-1/4 -start-20 w-96 h-96 bg-rose-100 rounded-full blur-[120px] opacity-60 dark:opacity-0 transition-opacity duration-500" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-64 bg-gradient-to-b from-red-50/70 to-transparent dark:from-transparent" />
+
+        {/* Dark mode blobs */}
+        <div className="absolute top-1/4 -end-20 w-96 h-96 bg-red-600/12 rounded-full blur-[120px] opacity-0 dark:opacity-100 transition-opacity duration-500" />
+        <div className="absolute bottom-1/4 -start-20 w-96 h-96 bg-red-900/10 rounded-full blur-[120px] opacity-0 dark:opacity-100 transition-opacity duration-500" />
+        <div className="absolute inset-0 bg-[radial-gradient(#00000008_1px,transparent_1px)] dark:bg-[radial-gradient(#ffffff08_1px,transparent_1px)] [background-size:20px_20px]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Announcement Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-950/50 border border-red-800/40 text-red-400 text-xs sm:text-sm font-semibold mb-8">
-          <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-          {dict.hero.badge}
-        </div>
-
         {/* Main Headline */}
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight mb-6">
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight mb-6
+                       text-zinc-900 dark:text-white">
           {dict.hero.heading1} <br />
           <span className="bg-gradient-to-r from-red-500 via-red-600 to-red-400 bg-clip-text text-transparent">
             {dict.hero.heading2}
@@ -71,7 +73,8 @@ export default function Hero({ dict, lang }: HeroProps) {
         </h1>
 
         {/* Subtitle */}
-        <p className="max-w-2xl mx-auto text-base sm:text-lg text-zinc-400 leading-relaxed mb-12">
+        <p className="max-w-2xl mx-auto text-base sm:text-lg leading-relaxed mb-12
+                      text-zinc-600 dark:text-zinc-400">
           {dict.hero.subtitle}
         </p>
 
@@ -80,15 +83,18 @@ export default function Hero({ dict, lang }: HeroProps) {
           <Link
             href={`/${lang}/products#appliances`}
             className="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-4 rounded-xl text-center
-                       transition-all duration-300 hover:scale-[1.03] active:scale-95"
-            style={{ boxShadow: "0 8px 24px -4px rgb(220 38 38 / 0.4)" }}
+                       transition-all duration-300 hover:scale-[1.03] active:scale-95 shadow-lg shadow-red-600/30"
           >
             {dict.hero.ctaAppliances}
           </Link>
           <Link
             href={`/${lang}/products#lighting`}
-            className="w-full sm:w-auto bg-zinc-900/80 hover:bg-zinc-800 text-zinc-100 hover:text-white font-semibold px-8 py-4 rounded-xl text-center
-                       border border-zinc-700/60 hover:border-zinc-600
+            className="w-full sm:w-auto font-semibold px-8 py-4 rounded-xl text-center
+                       border-2 border-zinc-300 hover:border-red-500
+                       text-zinc-700 hover:text-red-600
+                       dark:border-zinc-700/60 dark:hover:border-zinc-500
+                       dark:text-zinc-200 dark:hover:text-white
+                       bg-white/80 hover:bg-white dark:bg-zinc-900/80 dark:hover:bg-zinc-800
                        transition-all duration-300 hover:scale-[1.03] active:scale-95"
           >
             {dict.hero.ctaLighting}
@@ -96,16 +102,22 @@ export default function Hero({ dict, lang }: HeroProps) {
         </div>
 
         {/* Assurance Badges */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-20 pt-10 border-t border-zinc-800/60 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-20 pt-10 max-w-4xl mx-auto
+                        border-t border-zinc-200 dark:border-zinc-800/60">
           {badges.map((item, idx) => (
             <div
               key={idx}
-              className="flex flex-col items-center p-4 rounded-2xl bg-zinc-900/50 border border-zinc-800/50 backdrop-blur-sm
-                         hover:bg-zinc-900/80 hover:border-zinc-700/60 transition-all duration-300"
+              className="flex flex-col items-center p-4 rounded-2xl
+                         bg-white dark:bg-zinc-900/50
+                         border border-zinc-200 dark:border-zinc-800/50
+                         hover:border-red-300 dark:hover:border-zinc-700/60
+                         shadow-sm dark:shadow-none
+                         hover:shadow-md dark:hover:bg-zinc-900/80
+                         transition-all duration-300"
             >
-              <div className="p-2.5 bg-red-600/12 rounded-xl mb-3">{item.icon}</div>
-              <h3 className="text-zinc-100 font-semibold text-sm mb-1 text-center">{item.title}</h3>
-              <p className="text-zinc-500 text-xs text-center leading-relaxed">{item.desc}</p>
+              <div className="p-2.5 bg-red-50 dark:bg-red-600/12 rounded-xl mb-3">{item.icon}</div>
+              <h3 className="text-zinc-800 dark:text-zinc-100 font-semibold text-sm mb-1 text-center">{item.title}</h3>
+              <p className="text-zinc-500 dark:text-zinc-500 text-xs text-center leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>

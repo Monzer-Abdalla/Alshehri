@@ -26,8 +26,10 @@ export default function Navbar({ dict, lang }: NavbarProps) {
   ];
 
   const isActive = (href: string) => {
+    // Hash anchor links (#appliances, #lighting) are never "active" page routes
+    if (href.includes('#')) return false;
     if (href === `/${lang}`) return pathname === `/${lang}`;
-    return pathname.startsWith(href.split("#")[0]) && href !== `/${lang}`;
+    return pathname.startsWith(href);
   };
 
   return (
